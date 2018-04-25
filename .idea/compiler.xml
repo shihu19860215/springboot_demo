@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot10_restful" />
+        <module name="springboot11_interceptor" />
+        <module name="springboot12_mail" />
+        <module name="springboot1_property" />
+        <module name="springboot2_schedule" />
+        <module name="springboot3_validator" />
+        <module name="springboot4_aop" />
+        <module name="springboot5_errorpage" />
+        <module name="springboot6_web" />
+        <module name="springboot7_redis" />
+        <module name="springboot8_logback" />
+        <module name="springboot9_elasticsearch" />
+        <module name="union" />
+        <module name="validator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="root" target="1.8" />
+      <module name="springboot10_restful" target="1.8" />
+      <module name="springboot11_interceptor" target="1.8" />
+      <module name="springboot12_mail" target="1.8" />
+      <module name="springboot1_property" target="1.8" />
+      <module name="springboot2_schedule" target="1.8" />
+      <module name="springboot3_validator" target="1.8" />
+      <module name="springboot4_aop" target="1.8" />
+      <module name="springboot5_errorpage" target="1.8" />
+      <module name="springboot6_web" target="1.8" />
+      <module name="springboot7_redis" target="1.8" />
+      <module name="springboot8_logback" target="1.8" />
+      <module name="springboot9_elasticsearch" target="1.8" />
+      <module name="union" target="1.8" />
+      <module name="validator" target="1.8" />
+      <module name="web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

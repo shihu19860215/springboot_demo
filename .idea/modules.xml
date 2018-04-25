@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/root/root.iml" filepath="$PROJECT_DIR$/root/root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot10_restful/springboot10_restful.iml" filepath="$PROJECT_DIR$/springboot10_restful/springboot10_restful.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot11_interceptor/springboot11_interceptor.iml" filepath="$PROJECT_DIR$/springboot11_interceptor/springboot11_interceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot12_mail/springboot12_mail.iml" filepath="$PROJECT_DIR$/springboot12_mail/springboot12_mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot1_property/springboot1_property.iml" filepath="$PROJECT_DIR$/springboot1_property/springboot1_property.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot2_schedule/springboot2_schedule.iml" filepath="$PROJECT_DIR$/springboot2_schedule/springboot2_schedule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot3_validator/springboot3_validator.iml" filepath="$PROJECT_DIR$/springboot3_validator/springboot3_validator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot4_aop/springboot4_aop.iml" filepath="$PROJECT_DIR$/springboot4_aop/springboot4_aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot5_errorpage/springboot5_errorpage.iml" filepath="$PROJECT_DIR$/springboot5_errorpage/springboot5_errorpage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot6_web/springboot6_web.iml" filepath="$PROJECT_DIR$/springboot6_web/springboot6_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot7_redis/springboot7_redis.iml" filepath="$PROJECT_DIR$/springboot7_redis/springboot7_redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot8_logback/springboot8_logback.iml" filepath="$PROJECT_DIR$/springboot8_logback/springboot8_logback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot9_elasticsearch/springboot9_elasticsearch.iml" filepath="$PROJECT_DIR$/springboot9_elasticsearch/springboot9_elasticsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/union/union.iml" filepath="$PROJECT_DIR$/union/union.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot3_validator/validator.iml" filepath="$PROJECT_DIR$/springboot3_validator/validator.iml" />
+    </modules>
+  </component>
+</project>

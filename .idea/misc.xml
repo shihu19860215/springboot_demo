@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springboot1_property/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot2_schedule/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot3_alidator/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot4_aop/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot3_validator/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot5_errorpage/pom.xml" />
+        <option value="$PROJECT_DIR$/srpingboot6_web/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_redis/pom.xml" />
+        <option value="$PROJECT_DIR$/union/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot8_logback/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot9_elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot10_restful/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot11_interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/root/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot12_mail/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot6_web/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
