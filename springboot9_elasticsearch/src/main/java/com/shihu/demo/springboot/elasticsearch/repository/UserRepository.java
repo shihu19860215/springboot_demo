@@ -1,6 +1,6 @@
 package com.shihu.demo.springboot.elasticsearch.repository;
 
-import com.shihu.demo.springboot.validator.model.User;
+import com.shihu.demo.springboot.elasticsearch.model.User;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 import java.util.List;

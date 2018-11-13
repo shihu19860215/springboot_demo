@@ -1,0 +1,7 @@
+spring:
+  rocketmq:
+    namesrvAddr: 192.168.7.160:9876
+
+logging:
+  level:
+    root: debug

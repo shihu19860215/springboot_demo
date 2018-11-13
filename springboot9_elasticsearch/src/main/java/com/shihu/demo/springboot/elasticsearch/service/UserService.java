@@ -1,7 +1,7 @@
 package com.shihu.demo.springboot.elasticsearch.service;
 
 
-import com.shihu.demo.springboot.validator.model.User;
+import com.shihu.demo.springboot.elasticsearch.model.User;
 
 import java.util.List;
 

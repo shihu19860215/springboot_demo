@@ -1,8 +1,7 @@
 package com.shihu.demo.springboot.elasticsearch.controller;
 
 
-import com.shihu.demo.springboot.service.UserSearchService;
-import com.shihu.demo.springboot.service.UserService;
+import com.shihu.demo.springboot.elasticsearch.service.UserSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

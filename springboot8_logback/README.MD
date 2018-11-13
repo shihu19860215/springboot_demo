@@ -4,7 +4,7 @@ logstash配置
 input {
  redis {
   codec => json
-  host => "192.168.2.166"
+  host => "192.168.7.166"
   port => 6379
   key => "logstash"
   data_type => "list"
@@ -12,7 +12,7 @@ input {
 }
 output {
      elasticsearch {
-        hosts => ["192.168.2.166:9200"]
+        hosts => ["192.168.7.166:9200"]
         index => "索引名"
         }
 }

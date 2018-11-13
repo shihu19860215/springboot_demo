@@ -1,9 +1,11 @@
-package com.shihu.demo.springboot.validator.model;
+package com.shihu.demo.springboot.elasticsearch.model;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 /**
  * 用户实体类
@@ -39,6 +41,8 @@ public class User implements Serializable {
     @NotEmpty(message = "出生时间不能为空")
     private String birthday;
 
+    private Date[] workDate;
+
     public Long getId() {
         return id;
     }
@@ -69,6 +73,14 @@ public class User implements Serializable {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public Date[] getWorkDate() {
+        return workDate;
+    }
+
+    public void setWorkDate(Date[] workDate) {
+        this.workDate = workDate;
     }
 
     @Override

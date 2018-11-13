@@ -8,11 +8,11 @@ import java.util.Map;
 
 @Component
 @ConfigurationProperties(prefix = "com.user")
+//注意需要有set方法
 public class User {
     private String name;
     private Map<String,String> workmap;
     private List<String> addrs;
-
     @Override
     public String toString() {
         return "User{" +

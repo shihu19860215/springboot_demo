@@ -1,16 +1,19 @@
 package com.shihu.demo.springboot.elasticsearch.service.impl;
 
+import com.shihu.demo.springboot.elasticsearch.model.User;
 import com.shihu.demo.springboot.elasticsearch.repository.UserRepository;
 import com.shihu.demo.springboot.elasticsearch.service.UserService;
-import com.shihu.demo.springboot.validator.model.User;
 import org.apache.commons.collections.IteratorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -42,8 +45,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll(Integer pageNumber, Integer pageSize) {
-        if(null==pageNumber||pageNumber<0)pageNumber=DEFAULT_PAGE_NUMBER;
-        if(null==pageSize||pageSize<1)pageSize=DEFAULT_PAGE_SIZE;
+        if(null==pageNumber||pageNumber<0){
+            pageNumber=DEFAULT_PAGE_NUMBER;
+        }
+        if(null==pageSize||pageSize<1){
+            pageSize=DEFAULT_PAGE_SIZE;
+        }
         Pageable pageable=new PageRequest(pageNumber,pageSize);
         Iterable<User> userIt=userRepository.findAll(pageable);
         List<User> list=null;
@@ -99,7 +106,16 @@ public class UserServiceImpl implements UserService {
             date+="0"+(random.nextInt(8)+1)+"-";
             date+=10+random.nextInt(17);
             user.setBirthday(date);
-            user.setAge(age);
+            //user.setAge(age);
+
+            int rnum=random.nextInt(4)+1;
+            Date[] arr=new Date[rnum];
+            for(int j=0;j<rnum;j++){
+                long now=System.currentTimeMillis();
+                long rd=now-random.nextLong()%315360000000L;
+                arr[j]=new Date(rd);
+            }
+            user.setWorkDate(arr);
             userRepository.save(user);
         }
     }

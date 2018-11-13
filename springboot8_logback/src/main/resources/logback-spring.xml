@@ -64,7 +64,7 @@
         <sourcePath>mySourcePath</sourcePath>
         <type>myApplication</type>-->
         <tags>logback5</tags>
-        <host>192.168.2.166</host>
+        <host>192.168.7.166</host>
         <port>6379</port>
         <key>logstash</key>
     </appender>
@@ -74,7 +74,7 @@
         <sourcePath>mySourcePath</sourcePath>
         <type>myApplication</type>-->
         <tags>logback5</tags>
-        <host>192.168.2.166</host>
+        <host>192.168.7.166</host>
         <port>6379</port>
         <key>logstash</key>
     </appender>

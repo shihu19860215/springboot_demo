@@ -1,9 +1,10 @@
 package com.shihu.demo.springboot.elasticsearch.service.impl;
 
+import com.shihu.demo.springboot.elasticsearch.model.User;
 import com.shihu.demo.springboot.elasticsearch.repository.UserRepository;
 import com.shihu.demo.springboot.elasticsearch.service.UserSearchService;
-import com.shihu.demo.springboot.validator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

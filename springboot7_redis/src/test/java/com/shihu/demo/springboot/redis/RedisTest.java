@@ -1,7 +1,6 @@
 package com.shihu.demo.springboot.redis;
 
 
-import com.shihu.demo.springboot.Application;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

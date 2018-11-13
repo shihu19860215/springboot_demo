@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class WorkingTimeControllerAspect extends WorkingTimeAspectAbstract {
 
+    @Override
     @Pointcut("@within(org.springframework.stereotype.Controller)")
     public void pointcut(){
 

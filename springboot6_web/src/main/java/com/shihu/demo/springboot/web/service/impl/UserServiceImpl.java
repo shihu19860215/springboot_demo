@@ -1,7 +1,7 @@
 package com.shihu.demo.springboot.web.service.impl;
 
-import com.shihu.demo.springboot.repository.UserRepository;
-import com.shihu.demo.springboot.validator.model.User;
+import com.shihu.demo.springboot.web.model.User;
+import com.shihu.demo.springboot.web.repository.UserRepository;
 import com.shihu.demo.springboot.web.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

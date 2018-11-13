@@ -1,11 +1,10 @@
 package com.shihu.demo.springboot.elasticsearch.service.impl;
 
+import com.shihu.demo.springboot.elasticsearch.model.User;
 import com.shihu.demo.springboot.elasticsearch.repository.UserRepository;
 import com.shihu.demo.springboot.elasticsearch.service.UserPageService;
-import com.shihu.demo.springboot.validator.model.User;
 import org.elasticsearch.common.lucene.search.function.FiltersFunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
 import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
