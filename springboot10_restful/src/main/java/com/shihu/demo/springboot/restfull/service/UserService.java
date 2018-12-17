@@ -4,6 +4,7 @@ package com.shihu.demo.springboot.restfull.service;
 import com.shihu.demo.springboot.restfull.model.User;
 
 import java.util.List;
+import java.util.concurrent.Future;
 
 /**
  * User 业务层接口
@@ -11,6 +12,8 @@ import java.util.List;
  * Created by bysocket on 24/07/2017.
  */
 public interface UserService {
+
+    Future<List<User>> findAllAsync();
 
     List<User> findAll();
 
