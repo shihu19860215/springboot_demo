@@ -1,0 +1,36 @@
+## Mybatis \u914D\u7F6E
+mybatis:
+  typeAliasesPackage: com.shihu.demo.springboot.mybatis.model
+  mapperLocations: classpath:mapper/*.xml
+
+sharding:
+  jdbc:
+    datasource:
+      names: ds0,ds1
+      ds0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://shihu19860215.6655.la:3306/db_city0?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password: 5523003
+      ds1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://shihu19860215.6655.la/db_city1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password: 5523003
+    config:
+      sharding:
+        default-database-strategy:
+          inline:
+            sharding-column: id
+            algorithm-expression: ds$->{(id & 0x03)>>1}
+        tables:
+          t_city:
+            actual-data-nodes: ds$->{0..1}.t_city$->{0..1}
+            table-strategy:
+              inline:
+                sharding-column: id
+                algorithm-expression: t_city$->{id & 0x01}
+            key-generator:
+              column: id

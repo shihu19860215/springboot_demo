@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shihu.demo.springboot.mybatis.dao.CityDao">
+	<resultMap id="BaseResultMap" type="com.shihu.demo.springboot.mybatis.model.City">
+		<result column="id" property="id" />
+		<result column="city_name" property="cityName" />
+	</resultMap>
+
+	<parameterMap id="City" type="com.shihu.demo.springboot.mybatis.model.City"/>
+
+	<sql id="Base_Column_List">
+		id, city_name
+	</sql>
+
+	<insert id="insert" parameterType="com.shihu.demo.springboot.mybatis.model.City" useGeneratedKeys="true" keyProperty="id">
+		insert into t_city(id,city_name) values(#{id},#{cityName})
+	</insert>
+
+	<insert id="insertCollection" parameterType="com.shihu.demo.springboot.mybatis.model.City" useGeneratedKeys="true" keyProperty="id">
+		insert into t_city(id,city_name) values
+		<foreach collection="list" index="index" separator="," item="item">
+			(#{item.id},#{item.cityName})
+		</foreach>
+	</insert>
+
+	<select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from t_city
+		where city_name = #{cityName}
+	</select>
+
+</mapper>
