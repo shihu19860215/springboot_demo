@@ -1,0 +1,28 @@
+## Mybatis \u914D\u7F6E
+mybatis:
+  typeAliasesPackage: com.shihu.demo.springboot.mybatis.model
+  mapperLocations: classpath:mapper/*.xml
+
+sharding:
+  jdbc:
+    datasource:
+      names: ds0,ds1
+      ds0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://shihu19860215.6655.la:3306/db_city0?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password: 5523003
+      ds1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://shihu19860215.6655.la/db_city1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password: 5523003
+    config:
+      masterslave:
+      #round_robin（轮询）和random（随机）
+        load-balance-algorithm-type: round_robin
+        name: dataSource
+        master-data-source-name: ds0
+        slave-data-source-names: ds1
