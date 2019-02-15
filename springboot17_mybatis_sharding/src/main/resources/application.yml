@@ -10,13 +10,13 @@ sharding:
       ds0:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://shihu19860215.6655.la:3306/db_city0?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        url: jdbc:mysql://192.168.1.88:3306/db_city0?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
         username: root
         password: 5523003
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://shihu19860215.6655.la/db_city1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        url: jdbc:mysql://192.168.1.88/db_city1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
         username: root
         password: 5523003
     config:
