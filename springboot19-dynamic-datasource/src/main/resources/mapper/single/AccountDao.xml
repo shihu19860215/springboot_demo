@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shihu.demo.dynamic.datasource.dao.single.AccountDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.shihu.demo.dynamic.datasource.model.AccountPO" id="accountMap">
+        <result property="id" column="id"/>
+        <result property="account" column="account"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="status" column="status"/>
+        <result property="updateVersion" column="update_version"/>
+    </resultMap>
+
+  <sql id="base_column_list">
+    id,account,username,password,status,update_version
+  </sql>
+    <sql id="base_custom_column_list">
+      <choose>
+        <when test="columns != null and columns.length != 0">
+          <foreach collection="columns" item="item" index="index" separator=",">
+            ${item}
+          </foreach>
+        </when>
+        <otherwise>
+          <include refid="base_column_list"/>
+        </otherwise>
+      </choose>
+    </sql>
+
+
+    <sql id="base_where">
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="id != null">AND id = #{id}</if>
+            <if test="account != null">AND account = #{account}</if>
+            <if test="username != null">AND username = #{username}</if>
+            <if test="password != null">AND password = #{password}</if>
+            <if test="status != null">AND status = #{status}</if>
+            <if test="idIn != null and idIn.size > 0">AND id in
+                <foreach collection="idIn" item="item" index="index"
+                         open="(" separator="," close=")">#{item}
+                </foreach>
+            </if>
+        </trim>
+    </sql>
+
+    <select id="get" resultMap="accountMap">
+      select
+      <include refid="base_column_list"/>
+      from t_account where id = #{id}
+    </select>
+
+    <select id="getByIds" resultMap="accountMap">
+      select
+      <include refid="base_column_list"/>
+      from t_account where
+      <if test="collection != null and collection.size > 0">id in
+        <foreach collection="collection" item="item" index="index"
+                 open="(" separator="," close=")">#{item}
+        </foreach>
+      </if>
+    </select>
+
+    <select id="list" resultMap="accountMap"
+            parameterType="com.shihu.demo.dynamic.datasource.model.AccountQO">
+        select
+        <include refid="base_column_list"/>
+        from t_account
+        <include refid="base_where"/>
+        <if test="sortBy != null and sortBy.length != 0" >
+            <trim prefix="ORDER BY" suffixOverrides=",">
+                <foreach collection="sortBy" item="item" index="index" separator=",">
+                    ${item.sortColumn} ${item.sortMode}
+                </foreach>
+            </trim>
+        </if>
+        limit #{firstRow},#{pageSize}
+    </select>
+
+    <select id="count" resultType="int" parameterType="com.shihu.demo.dynamic.datasource.model.AccountQO">
+        select count(id) from t_account
+        <include refid="base_where"/>
+    </select>
+
+    <insert id="insert" parameterType="com.shihu.demo.dynamic.datasource.model.AccountPO" useGeneratedKeys="true" keyProperty="id">
+        insert into t_account
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="account != null">account,</if>
+            <if test="username != null">username,</if>
+            <if test="password != null">password,</if>
+            <if test="status != null">status,</if>
+            <if test="updateVersion != null">update_version,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="account != null">#{account},</if>
+            <if test="username != null">#{username},</if>
+            <if test="password != null">#{password},</if>
+            <if test="status != null">#{status},</if>
+            <if test="updateVersion != null">#{updateVersion},</if>
+        </trim>
+    </insert>
+
+    <insert id="insertCollection" parameterType="com.shihu.demo.dynamic.datasource.model.AccountPO" useGeneratedKeys="true" keyProperty="id">
+        insert into t_account
+        (id,account,username,password,status,update_version)
+        values
+        <foreach collection="list" index="index" separator="," item="item">
+            (#{item.id},#{item.account},#{item.username},#{item.password},#{item.status},#{item.updateVersion})
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="com.shihu.demo.dynamic.datasource.model.AccountPO">
+        update t_account
+        <set>
+            <if test="account != null">
+                account = #{account},
+            </if>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+             update_version = update_version+1,
+        </set>
+        where id = #{id} and update_version = #{updateVersion}
+    </update>
+
+
+  <delete id="delete">
+    delete from t_account where id = #{id}
+  </delete>
+
+  <delete id="deleteByIds" parameterType="java.util.Collection">
+    delete from t_account where id in
+    <foreach collection="collection" item="item" index="index"
+             open="(" separator="," close=")">#{item}
+    </foreach>
+  </delete>
+  <delete id="deleteByQO" parameterType="com.shihu.demo.dynamic.datasource.model.AccountQO">
+    delete from t_account
+    <include refid="base_where"/>
+  </delete>
+
+
+</mapper>
